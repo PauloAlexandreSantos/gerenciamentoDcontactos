@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Classes\Logger;
+
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    private $Logger;
 
-    public function __construct()
-    {
-        $this->Logger = new Logger;
-    }
 
     public function list()
     {

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Classes\Logger;
+
 use App\Http\Controllers\Controller;
 use App\Models\Log;
 use App\Models\User;
@@ -16,12 +16,7 @@ class UserController extends Controller
 {
 
 
-    private $Logger;
 
-    public function __construct()
-    {
-        $this->Logger = new Logger;
-    }
     public function index()
     {
         //
