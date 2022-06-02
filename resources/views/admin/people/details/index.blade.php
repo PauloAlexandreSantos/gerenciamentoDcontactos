@@ -30,7 +30,7 @@
                                         <h5 class="mb-1">
                                             <b>Avatar:</b>
                                         </h5>
-                                       {!! html_entity_decode($people->avatar) !!}
+                                        {!! html_entity_decode($people->avatar) !!}
 
                                     </div>
 
@@ -49,14 +49,15 @@
 
                                     </div>
                                     @if (null !== Auth::user())
-                                    <div class="col-md-5 mb-2">
-                                        <a href='{{ route('people.edit', $people->id) }}' class="dropdown-item">Editar</a>
+                                        <div class="col-md-5 mb-2">
+                                            <a href='{{ route('people.edit', $people->id) }}'
+                                                class="dropdown-item">Editar</a>
 
-                                        <a href='{{ route('people.delete', $people->id) }}' class="dropdown-item">
-                                            Eliminar
-                                        </a>
-
-                                    </div>
+                                            <a href='{{ route('people.delete', $people->id) }}' class="dropdown-item">
+                                                Eliminar
+                                            </a>
+                                        
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -73,5 +74,6 @@
     </div>
 
 
+    <a href="{{ route('contact.create', $people->id) }}">Adicionar Contacto</a>
 
 @endsection

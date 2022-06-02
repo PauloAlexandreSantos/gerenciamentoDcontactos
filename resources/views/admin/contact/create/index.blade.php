@@ -20,7 +20,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('contact.store', $id) }}" method="POST" class="row">
+            <form action="{{ route('contact.store', $people->id) }}" method="POST" class="row">
                 @csrf
                 @include('forms._formContact.index')
                 <div class="col-md-12">

@@ -1,4 +1,5 @@
 
+e06ada63b6c1aec0bbf1e40f2ebca763
 
 A aplicação web deve ter as seguintes funcionalidades:
 
@@ -7,14 +8,9 @@ A aplicação web deve ter as seguintes funcionalidades:
 4 - Uma página para adicionar um novo contato ou editar um contato existente.
 
 
-6 - Permitir a exclusão de um contato.
-
 Requisitos
 
 
-Uma pessoa pode ter qualquer número de contatos. Um contato é uma entidade com 3 campos: ID, CountryCode e Number. O número deve ter exatamente 9 dígitos, CountryCode deve ser o valor de CallCodes obtido de uma API externa.
-
-A API a seguir contém informações do país, incluindo nomes e códigos de chamada: https://restcountries.eu/
 
 O formulário para adicionar um novo contato deve exibir uma lista suspensa pesquisável onde o usuário selecionará o país, bem como uma entrada para digitar o número. A lista de países exibida ao usuário deve conter o nome do país e o código de chamada dentro de (). - exemplo: Portugal (351)
 
@@ -46,25 +42,13 @@ Considerações
 
 
 
-1 - Acesse a conta do cpanel e instale o Laravel
-
-2 - Crie e inicialize um repositório e envie a versão de linha de base do site Laravel para ele
-
-3 - Faça vários pushes com alterações de código de acordo com as melhores práticas
-Notas
-O ambiente de exercícios usa PHP versão 7.4.
-Os arquivos env e .htaccess são necessários para o bom funcionamento do ambiente, e já estão presentes no ambiente. Por favor, não exclua ou altere esses arquivos, a menos que seja estritamente necessário.
-Compositor
-O Composer é necessário para o Laravel e está disponível no container usado para o exercício. Para usar o compositor, execute os comandos abaixo (ou outros comandos necessários):
-
-instalação do compositor
-atualização do compositor
-compositor dump-autoload
-GIT
-Para gerenciamento de repositório, use um repositório externo (gitlab, bitbucket ou github), desde que o repositório seja público.
-
-
 <!-- feitos -->
+
+
+Uma pessoa pode ter qualquer número de contatos. Um contato é uma entidade com 3 campos: ID, CountryCode e Number. O número deve ter exatamente 9 dígitos, CountryCode deve ser o valor de CallCodes obtido de uma API externa.
+
+
+A API a seguir contém informações do país, incluindo nomes e códigos de chamada: https://restcountries.eu/
 
 
 
@@ -92,3 +76,25 @@ https://app.pixelencounter.com/api/basic/monsters/random
 3 - Uma página para mostrar os detalhes da pessoa.
 
 5 - Permitir a exclusão de uma pessoa.
+
+6 - Permitir a exclusão de um contato.
+
+
+
+
+1 - Acesse a conta do cpanel e instale o Laravel
+
+2 - Crie e inicialize um repositório e envie a versão de linha de base do site Laravel para ele
+
+3 - Faça vários pushes com alterações de código de acordo com as melhores práticas
+Notas
+O ambiente de exercícios usa PHP versão 7.4.
+Os arquivos env e .htaccess são necessários para o bom funcionamento do ambiente, e já estão presentes no ambiente. Por favor, não exclua ou altere esses arquivos, a menos que seja estritamente necessário.
+Compositor
+O Composer é necessário para o Laravel e está disponível no container usado para o exercício. Para usar o compositor, execute os comandos abaixo (ou outros comandos necessários):
+
+instalação do compositor
+atualização do compositor
+compositor dump-autoload
+GIT
+Para gerenciamento de repositório, use um repositório externo (gitlab, bitbucket ou github), desde que o repositório seja público.
