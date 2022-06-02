@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 /* SITE */
-route::get('/', ['as' => 'site.home', 'uses' => 'Site\HomeController@index']);
+route::get('/', ['as' => 'site.home', 'uses' => 'HomeController@index']);
 /* noticias */
 Route::get('/noticias', ['as' => 'site.news', 'uses' => 'Site\NewsController@index']);
 Route::get('/noticia/{title}', ['as' => 'site.news.show', 'uses' => 'Site\NewsController@show']);

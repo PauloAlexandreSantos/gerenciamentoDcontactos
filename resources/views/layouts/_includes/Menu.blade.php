@@ -1,3 +1,5 @@
+
+@if (null !== Auth::user())
 <a class="dropdown-item" href="{{ route('admin.user.show', Auth::User()->id) }}">Perfil</a>
 <a class="dropdown-item" href="{{ route('admin.user.edit', Auth::user()->id) }}">Configurações</a>
 <a class="nav-link text-danger" href="{{ route('logout') }}"
@@ -11,7 +13,6 @@
 </form>
 
 
-@if (null !== Auth::user())
     <li class="nav-item dropdown">
         <a href="#members" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
             <i class="fe fe-users fe-16"></i>

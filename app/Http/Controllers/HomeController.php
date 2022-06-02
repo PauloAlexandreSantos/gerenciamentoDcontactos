@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 
-class DashboardController extends Controller
+class HomeController extends Controller
 {
 
     /**
@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-
         return view('admin.home.index');
+
     }
 }
