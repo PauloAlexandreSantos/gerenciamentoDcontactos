@@ -19,7 +19,7 @@ class Contact extends Model
      */
     protected $dates = ['deleted_at'];
 
-    public function peoples()
+    public function people()
     {
         return $this->belongsTo(People::class, 'people_id', 'id');
     }

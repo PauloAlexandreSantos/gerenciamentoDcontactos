@@ -43,19 +43,19 @@ class ContactController extends Controller
     public function store(Request $request, $id)
     {
         $validation = $request->validate([
-            'number' => 'required|numeric|size:9',
+            'number' => 'required|numeric|digits:9',
             'countryCode' => 'required',
 
         ]);
 
 
-        $contact = Contact::create([
+        Contact::create([
             'countryCode' => $request->countryCode,
             'number' => $request->number,
             'people_id' =>  $id,
         ]);
 
-        return redirect()->route('contact.show', $id)->with('create', '1');
+        return redirect()->route('people.show', $id)->with('create', '1');
     }
 
      /**
@@ -67,7 +67,7 @@ class ContactController extends Controller
     public function show($id)
     {
 
-        $response['people'] = People::find($id);
+        $response['contact'] = Contact::with('people')->find($id);
 
         return view('admin.people.details.index', $response);
     }
@@ -82,8 +82,8 @@ class ContactController extends Controller
     {
         $response['countries'] = $this->country->get();
 
-        $response['people'] = People::find($id);
-        return view('admin.people.edit.index', $response);
+        $response['contact'] = Contact::with('people')->find($id);
+        return view('admin.contact.edit.index', $response);
     }
 
      /**
@@ -96,12 +96,17 @@ class ContactController extends Controller
     public function update(Request $request, $id)
     {
         $validation = $request->validate([
-            'name' => 'required|string|min:6|max:255',
-            'email' => 'required|email',
+            'number' => 'required|numeric|digits:9',
+            'countryCode' => 'required',
 
         ]);
 
-        People::find($id)->update($request->all());
+
+        Contact::find($id)->update([
+            'countryCode' => $request->countryCode,
+            'number' => $request->number,
+            'people_id' =>  $id,
+        ]);
         return redirect()->route('people.show', $id)->with('edit', '1');
     }
 
