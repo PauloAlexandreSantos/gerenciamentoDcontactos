@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
 
-        return redirect()->route('site.home');
+        return redirect()->route('home');
     }
 
     /**
@@ -53,6 +53,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('site.home');
+        return redirect()->route('home');
     }
 }

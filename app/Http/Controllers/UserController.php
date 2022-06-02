@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,8 +20,6 @@ class UserController extends Controller
     {
         //
         $response['users'] = User::get();
-        //Logger
-        $this->Logger->log('info', 'Listou os Utilizadores');
 
         return view('admin.user.list.index', $response);
     }
@@ -37,17 +34,10 @@ class UserController extends Controller
     public function show($id)
     {
 
-        if (Auth::user()->level != 'Administrador' && Auth::user()->id != $id) {
-            return redirect()->route('admin.home')->with('NoAuth', '1');
-        } else {
 
+        $response['user'] = User::find($id);
+        return view('admin.user.details.index', $response);
 
-            $response['logs'] = Log::where('USER_ID', $id)->orderBy('id', 'desc')->get();
-            $response['user'] = User::find($id);
-            //Logger
-            $this->Logger->log('info', 'Visualizou um Utilizador com o identificador ' . $id);
-            return view('admin.user.details.index', $response);
-        }
     }
 
     /**
@@ -58,15 +48,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        if (Auth::user()->level != 'Administrador' && Auth::user()->id != $id) {
-            return redirect()->route('admin.home')->with('NoAuth', '1');
-        } else {
 
-            $response['user'] = User::find($id);
-            //Logger
-            $this->Logger->log('info', 'Entrou em editar um Utilizador com o identificador ' . $id);
-            return view('admin.user.edit.index', $response);
-        }
+        $response['user'] = User::find($id);
+        return view('admin.user.edit.index', $response);
+
     }
 
     /**
@@ -78,9 +63,6 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (Auth::user()->level != 'Administrador' && Auth::user()->id != $id) {
-            return redirect()->route('admin.home')->with('NoAuth', '1');
-        } else {
 
             $request->validate([
                 'name' => 'required|string|max:255',
@@ -94,10 +76,8 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            //Logger
-            $this->Logger->log('info', 'Editou um Utilizador com o identificador ' . $id);
-            return redirect()->route('admin.home')->with('edit', '1');
-        }
+        return redirect()->route('home')->with('edit', '1');
+
     }
 
     /**

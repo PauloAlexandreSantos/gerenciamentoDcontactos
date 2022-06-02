@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 /* SITE */
-route::get('/', ['as' => 'site.home', 'uses' => 'HomeController@index']);
+route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 
 /* people */

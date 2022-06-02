@@ -1,12 +1,11 @@
 @extends('layouts.merge.dashboard')
-@section('titulo', 'Adicionar Imagens da Galeria')
+@section('titulo', 'Adicionar Contacto')
 
 @section('content')
     <div class="card mb-2">
         <div class="card-body">
             <h2 class="h5 page-title">
-                <a href="{{ route('admin.gallery.index') }}"><u>Listar Galerias</u></a> >
-                Adicionar Imagens da Galeria: {{ $gallery->name }}
+                Adicionar Contacto
             </h2>
         </div>
     </div>
@@ -21,14 +20,13 @@
                     </ul>
                 </div>
             @endif
-
-            <form action='{{ url("admin/imageGallery/store/$gallery->id") }}' enctype="multipart/form-data" method="POST" class="row">
+            <form action="{{ route('contact.store', $id) }}" method="POST" class="row">
                 @csrf
-                @include('forms._formImageGallery.index')
+                @include('forms._formContact.index')
                 <div class="col-md-12">
                     <div class="form-group text-center">
                         <button type="submit" class="btn px-5 col-md-4 btn-success">
-                            Salvar Imagens
+                            Salvar
                             <span class="fe fe-chevron-right fe-16"></span>
                         </button>
 

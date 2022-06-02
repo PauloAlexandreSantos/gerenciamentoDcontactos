@@ -17,7 +17,7 @@ class Administrador
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->level != 'Administrador'){
-            return redirect()->route('admin.home')->with('NoAuth', '1');
+            return redirect()->route('home')->with('NoAuth', '1');
         }
         return $next($request);
     }
