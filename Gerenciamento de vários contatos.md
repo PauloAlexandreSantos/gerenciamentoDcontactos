@@ -1,36 +1,13 @@
 
 
-A aplicação web deve ter as seguintes funcionalidades:
-
-
-
-4 - Uma página para adicionar um novo contato ou editar um contato existente.
-
-
-6 - Permitir a exclusão de um contato.
-
-Requisitos
-
-
-Uma pessoa pode ter qualquer número de contatos. Um contato é uma entidade com 3 campos: ID, CountryCode e Number. O número deve ter exatamente 9 dígitos, CountryCode deve ser o valor de CallCodes obtido de uma API externa.
-
-A API a seguir contém informações do país, incluindo nomes e códigos de chamada: https://restcountries.eu/
-
 O formulário para adicionar um novo contato deve exibir uma lista suspensa pesquisável onde o usuário selecionará o país, bem como uma entrada para digitar o número. A lista de países exibida ao usuário deve conter o nome do país e o código de chamada dentro de (). - exemplo: Portugal (351)
 
 Os países exibidos na lista suspensa devem vir diretamente da API e permitir a pesquisa usando os recursos de filtragem da API.
 
-Os contatos salvos no banco de dados devem conter o número inserido e uma referência ao código de chamada selecionado.
 
-
-
-A página de detalhes da pessoa deve mostrar todos os campos da pessoa, bem como a lista de contatos associados a ela. mais o link de edição e o botão de exclusão. Também deve haver um botão para criar um novo contato associado à pessoa.
-
-Cada um dos contatos na página de detalhes da pessoa deve ter um link de edição e um botão de exclusão.
 
 O contato e o endereço de e-mail devem ser exclusivos no sistema. Não pode haver várias pessoas com o mesmo endereço de e-mail, nem qualquer tupla de contato duplicada (CountryCode + Number).
 Requisitos adicionais
-Os seguintes requisitos devem ser implementados se dentro do tempo de execução do teste:
 
 Crie uma página para visualizar o número de contatos por país, mostrando uma lista de países que possuem contatos e o número de contatos desse país.
 Considerações
@@ -46,25 +23,24 @@ Considerações
 
 
 
-1 - Acesse a conta do cpanel e instale o Laravel
-
-2 - Crie e inicialize um repositório e envie a versão de linha de base do site Laravel para ele
-
-3 - Faça vários pushes com alterações de código de acordo com as melhores práticas
-Notas
-O ambiente de exercícios usa PHP versão 7.4.
-Os arquivos env e .htaccess são necessários para o bom funcionamento do ambiente, e já estão presentes no ambiente. Por favor, não exclua ou altere esses arquivos, a menos que seja estritamente necessário.
-Compositor
-O Composer é necessário para o Laravel e está disponível no container usado para o exercício. Para usar o compositor, execute os comandos abaixo (ou outros comandos necessários):
-
-instalação do compositor
-atualização do compositor
-compositor dump-autoload
-GIT
-Para gerenciamento de repositório, use um repositório externo (gitlab, bitbucket ou github), desde que o repositório seja público.
-
-
 <!-- feitos -->
+Os seguintes requisitos devem ser implementados se dentro do tempo de execução do teste:
+
+Cada um dos contatos na página de detalhes da pessoa deve ter um link de edição e um botão de exclusão.
+
+
+4 - Uma página para adicionar um novo contato ou editar um contato existente.
+
+A página de detalhes da pessoa deve mostrar todos os campos da pessoa, bem como a lista de contatos associados a ela. mais o link de edição e o botão de exclusão. Também deve haver um botão para criar um novo contato associado à pessoa.
+
+
+Os contatos salvos no banco de dados devem conter o número inserido e uma referência ao código de chamada selecionado.
+
+
+Uma pessoa pode ter qualquer número de contatos. Um contato é uma entidade com 3 campos: ID, CountryCode e Number. O número deve ter exatamente 9 dígitos, CountryCode deve ser o valor de CallCodes obtido de uma API externa.
+
+
+A API a seguir contém informações do país, incluindo nomes e códigos de chamada: https://restcountries.eu/
 
 
 
@@ -92,3 +68,25 @@ https://app.pixelencounter.com/api/basic/monsters/random
 3 - Uma página para mostrar os detalhes da pessoa.
 
 5 - Permitir a exclusão de uma pessoa.
+
+6 - Permitir a exclusão de um contato.
+
+
+
+
+1 - Acesse a conta do cpanel e instale o Laravel
+
+2 - Crie e inicialize um repositório e envie a versão de linha de base do site Laravel para ele
+
+3 - Faça vários pushes com alterações de código de acordo com as melhores práticas
+Notas
+O ambiente de exercícios usa PHP versão 7.4.
+Os arquivos env e .htaccess são necessários para o bom funcionamento do ambiente, e já estão presentes no ambiente. Por favor, não exclua ou altere esses arquivos, a menos que seja estritamente necessário.
+Compositor
+O Composer é necessário para o Laravel e está disponível no container usado para o exercício. Para usar o compositor, execute os comandos abaixo (ou outros comandos necessários):
+
+instalação do compositor
+atualização do compositor
+compositor dump-autoload
+GIT
+Para gerenciamento de repositório, use um repositório externo (gitlab, bitbucket ou github), desde que o repositório seja público.

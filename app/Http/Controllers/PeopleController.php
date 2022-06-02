@@ -62,7 +62,7 @@ class PeopleController extends Controller
     public function show($id)
     {
 
-        $response['people'] = People::find($id);
+        $response['people'] = People::with('contacts')->find($id);
 
         return view('admin.people.details.index', $response);
     }

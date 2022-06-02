@@ -30,7 +30,7 @@
                                         <h5 class="mb-1">
                                             <b>Avatar:</b>
                                         </h5>
-                                       {!! html_entity_decode($people->avatar) !!}
+                                        {!! html_entity_decode($people->avatar) !!}
 
                                     </div>
 
@@ -49,14 +49,15 @@
 
                                     </div>
                                     @if (null !== Auth::user())
-                                    <div class="col-md-5 mb-2">
-                                        <a href='{{ route('people.edit', $people->id) }}' class="dropdown-item">Editar</a>
+                                        <div class="col-md-5 mb-2">
+                                            <a href='{{ route('people.edit', $people->id) }}'
+                                                class="dropdown-item">Editar</a>
 
-                                        <a href='{{ route('people.delete', $people->id) }}' class="dropdown-item">
-                                            Eliminar
-                                        </a>
+                                            <a href='{{ route('people.delete', $people->id) }}' class="dropdown-item">
+                                                Eliminar
+                                            </a>
 
-                                    </div>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -73,5 +74,55 @@
     </div>
 
 
+    <a href="{{ route('contact.create', $people->id) }}">Adicionar Contacto</a>
 
+
+
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table datatables table-hover table-bordered" id="dataTable-1">
+                <thead class="bg-primary">
+                    <tr class="text-center">
+
+                        <th>CÓDIGO</th>
+                        <th>TELEFONE</th>
+                        <th>ACÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+
+                    @foreach ($people->contacts as $item)
+                        <tr class="text-center text-dark">
+
+                            <td>{{ $item->countryCode }} </td>
+                            <td>{{ $item->number }} </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="fa fa-clone fa-sm" aria-hidden="true"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href='{{ route('contact.show', $item->id) }}'
+                                            class="dropdown-item">Detalhes</a>
+                                        @if (null !== Auth::user())
+                                            <a href='{{ route('contact.edit', $item->id) }}'
+                                                class="dropdown-item">Editar</a>
+
+                                            <a href='{{ route('contact.delete', $item->id) }}' class="dropdown-item">
+                                                Eliminar
+                                            </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
