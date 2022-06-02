@@ -16,7 +16,7 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('countryCode');
-            $table->number('number', 9);
+            $table->integer('number');
 
             $table->unsignedBigInteger('people_id');
             $table->foreign('people_id')->references('id')->on('peoples');
