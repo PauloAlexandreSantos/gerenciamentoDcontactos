@@ -1,35 +1,36 @@
 @extends('layouts.merge.dashboard')
-@section('titulo', 'Lista de Utilizadores')
+@section('titulo', 'Lista de Pessoas')
 
 @section('content')
     <div class="card mb-2">
         <div class="card-body">
             <h2 class="h5 page-title">
-                Lista de Utilizadores
+                Lista de Pessoas
             </h2>
+            <a href="{{ route('people.create') }}">Cadastrar Pessoa</a>
         </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-body">
-
             <table class="table datatables table-hover table-bordered" id="dataTable-1">
                 <thead class="bg-primary">
                     <tr class="text-center">
-                        <th>#</th>
+
                         <th>NOME</th>
                         <th>EMAIL</th>
-                        <th>DATA DE CRIAÇÃO</th>
+                        <th>AVATAR</th>
                         <th>ACÇÕES</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white">
 
-                    @foreach ($users as $item)
+                    @foreach ($peoples as $item)
                         <tr class="text-center text-dark">
-                            <td>{{ $item->id }}</td>
+
                             <td>{{ $item->name }} </td>
                             <td>{{ $item->email }} </td>
-                            <td>{{ $item->created_at }} </td>
+                            <td>{!! html_entity_decode($item->avatar) !!}</td>
+
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
@@ -38,11 +39,16 @@
                                         <i class="fa fa-clone fa-sm" aria-hidden="true"></i>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a href='{{ route('user.show', $item->id) }}' class="dropdown-item">Detalhes</a>
-                                        <a href='{{ route('user.edit', $item->id) }}' class="dropdown-item">Editar</a>
-                                        <a href='{{ route('user.delete', $item->id) }}' class="dropdown-item">Eliminar</a>
+                                        <a href='{{ route('people.show', $item->id) }}'
+                                            class="dropdown-item">Detalhes</a>
+                                        @if (null !== Auth::user())
+                                            <a href='{{ route('people.edit', $item->id) }}'
+                                                class="dropdown-item">Editar</a>
 
-
+                                            <a href='{{ route('people.delete', $item->id) }}' class="dropdown-item">
+                                                Eliminar
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </td>
@@ -51,8 +57,6 @@
 
                 </tbody>
             </table>
-
-
         </div>
     </div>
 

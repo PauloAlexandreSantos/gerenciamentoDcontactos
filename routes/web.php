@@ -9,7 +9,7 @@ route::get('/', ['as' => 'site.home', 'uses' => 'HomeController@index']);
 /* people */
 Route::get('people/index', ['as' => 'people.index', 'uses' => 'PeopleController@index']);
 Route::get('people/show/{id}', ['as' => 'people.show', 'uses' => 'PeopleController@show']);
-Route::get('countries', ['as' => 'country.show', 'uses' => 'CountryController@index']);
+Route::get('countries', ['as' => 'country.index', 'uses' => 'CountryController@index']);
 Route::get('contact/country/{country}', ['as' => 'contact.show', 'uses' => 'ContactController@index']);
 
 

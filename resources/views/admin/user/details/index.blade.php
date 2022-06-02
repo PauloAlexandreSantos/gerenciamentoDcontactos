@@ -31,20 +31,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row mb-4">
-                                    <div class="col-md-12">
-                                        <h4 class="mb-1">
-                                            <b>Nivel de Acesso:</b>
-                                            {{ $user->level }}
-
-                                        </h4>
-                                    </div>
-                                    {{-- <div class="col">
-                                        <p class="small mb-0 text-muted">Nec Urna Suscipit Ltd</p>
-                                        <p class="small mb-0 text-muted">P.O. Box 464, 5975 Eget Avenue</p>
-                                        <p class="small mb-0 text-muted">(537) 315-1481</p>
-                                    </div> --}}
-                                </div>
+                       
                             </div>
                         </div>
 
@@ -58,47 +45,6 @@
         </div>
     </div>
 
-
-    <div class="card shadow mb-4">
-        <div class="col-12 pt-4">
-            <h4>Registo de Actividades</h4>
-        </div>
-        <div class="card-body">
-            <table class="table datatables table-hover table-bordered" id="dataTable-1">
-                <thead class="bg-primary">
-                    <tr class="text-center">
-                        <th>ID</th>
-                        <th>NIVEL</th>
-                        <th>IP</th>
-
-                        <th>DATA</th>
-                        <th>DESCRIÇÃO</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white">
-
-                    @foreach ($logs as $item)
-                        <tr class="text-center text-dark">
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->level }} </td>
-                            <td>{{ $item->REMOTE_ADDR }} </td>
-
-                            <td class="text-left">{{ $item->created_at }} </td>
-                            <td class="text-left">{{ $item->message }} </td>
-                            {{-- <td>
-                                <button type="button" class="btn btn-dark" data-toggle="modal"
-                                    data-target="#logs{{ $item->id }}">
-                                    VER
-                                </button>
-                            </td> --}}
-                        </tr>
-                        {{-- @include('extra.modals.logs.index') --}}
-                    @endforeach
-
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 
 @endsection

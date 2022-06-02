@@ -14,6 +14,7 @@ A aplicação web deve ter as seguintes funcionalidades:
 
 3 - Uma página para mostrar os detalhes da pessoa.
 
+
 4 - Uma página para adicionar um novo contato ou editar um contato existente.
 
 5 - Permitir a exclusão de uma pessoa.
@@ -49,7 +50,20 @@ Adicione um ícone/avatar para cada pessoa. Use a seguinte API para gerar uma im
 https://app.pixelencounter.com/api/basic/monsters/random
 Crie uma página para visualizar o número de contatos por país, mostrando uma lista de países que possuem contatos e o número de contatos desse país.
 Considerações
+
+
+
+
+
+
+
+
 Quaisquer informações ou dados necessários da estrutura do banco de dados devem ser adicionados usando migrações e/ou sementes.
+
+
+
+
+
 
 Sempre use os recursos nativos do Laravel quando possível, incluindo rotas, controladores, regras de validação de formulário, exclusões reversíveis e outros recursos.
 Etapas de desenvolvimento

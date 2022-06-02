@@ -16,7 +16,7 @@ class CreatePeoplesTable extends Migration
         Schema::create('peoples', function (Blueprint $table) {
             $table->id();
 
-            $table->string('avatar');
+            $table->longText('avatar');
             $table->string('name');
             $table->string('email')->unique();
             $table->softDeletes();
