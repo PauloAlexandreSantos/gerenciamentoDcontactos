@@ -1,4 +1,4 @@
- @extends('layouts.merge.site')
+ @extends('layouts.merge.dashboard')
  @section('titulo', 'Error 404')
  @section('content')
 
