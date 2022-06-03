@@ -5,8 +5,6 @@
 O contato e o endereço de e-mail devem ser exclusivos no sistema. Não pode haver várias pessoas com o mesmo endereço de e-mail, nem qualquer tupla de contato duplicada (CountryCode + Number).
 Requisitos adicionais
 
-Crie uma página para visualizar o número de contatos por país, mostrando uma lista de países que possuem contatos e o número de contatos desse país.
-Considerações
 
 
 
@@ -20,6 +18,9 @@ Considerações
 
 
 <!-- feitos -->
+
+Crie uma página para visualizar o número de contatos por país, mostrando uma lista de países que possuem contatos e o número de contatos desse país.
+Considerações
 
 O formulário para adicionar um novo contato deve exibir uma lista suspensa pesquisável onde o usuário selecionará o país, bem como uma entrada para digitar o número. A lista de países exibida ao usuário deve conter o nome do país e o código de chamada dentro de (). - exemplo: Portugal (351)
 

@@ -101,7 +101,7 @@
             <table class="table datatables table-hover table-bordered" id="dataTable-1">
                 <thead class="bg-primary">
                     <tr class="text-center">
-
+                        <th>#</th>
                         <th>CÓDIGO</th>
                         <th>TELEFONE</th>
                         <th>ACÇÕES</th>
@@ -111,7 +111,7 @@
 
                     @foreach ($people->contacts as $item)
                         <tr class="text-center text-dark">
-
+                            <td>{{ $item->id }} </td>
                             <td>{{ $item->countryCode }} </td>
                             <td>{{ $item->number }} </td>
                             <td>
@@ -142,4 +142,19 @@
             </table>
         </div>
     </div>
+@endsection
+
+@section('JS')
+<script>
+    $('#dataTable-1').DataTable({
+        autoWidth: true,
+        "lengthMenu": [
+            [8, 16, 32, -1],
+            [8, 16, 32, "All"]
+        ],
+        "order": [
+            [0, 'desc']
+        ]
+    });
+</script>
 @endsection
