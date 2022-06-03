@@ -6,7 +6,7 @@
         <div class="card-body">
             <h2 class="h5 page-title">
                 <a href="{{ route('people.show', $contact->people->id) }}"><u>Detalhar {{ $contact->people->name }}
-                        </u></a> > Editar Contacto >
+                         </u></a> > Editar Contacto >
                 {{ $contact->countryCode }} {{ $contact->number }}
             </h2>
         </div>

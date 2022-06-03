@@ -15,19 +15,18 @@
 
     <div class="form-group col-md-4">
         <label for="level">Nivel de Acesso</label>
-        <select name="level" id="level" class="form-control" required>
+        <select name="level" id="level" readonly class="form-control" required>
             @if (isset($user->level))
                 <option value="{{ $user->level }}" class="text-primary h6" selected>
                     {{ $user->level }}
                 </option>
             @else
-                <option disabled selected>selecione o nivel de acesso</option>
+
+                <option value="Administrador" selected>Administrador</option>
             @endif
 
-            @if (Auth::user()->level == 'Administrador')
-                <option value="Administrador">Administrador</option>
-                <option value="Editor">Editor</option>
-            @endif
+
+
 
         </select>
     </div>
