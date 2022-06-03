@@ -1,4 +1,3 @@
-
 <nav class="topnav navbar navbar-light bg-white">
     <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
         <i class="fe fe-menu navbar-toggler-icon"></i>
@@ -21,8 +20,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ route('user.show', Auth::User()->id) }}">Perfil</a>
-                    <a class="dropdown-item"
-                        href="{{ route('user.edit', Auth::user()->id) }}">Configurações</a>
+                    <a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">Configurações</a>
                     <a class="nav-link text-danger" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Terminar a Sessão
@@ -34,57 +32,57 @@
                 @csrf
             </form>
         @else
-            <a href="{{ route('login') }}" class="btn btn-primary">Iniciar Sessão</a>
+            <a href="{{ route('login') }}" class="btn btn-primary mt-3">Iniciar Sessão</a>
         @endif
     </ul>
 </nav>
 
-@if (null !== Auth::user())
-    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
-        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
-            <i class="fe fe-x"><span class="sr-only"></span></i>
-        </a>
-        <nav class="vertnav navbar navbar-light">
-            <!-- nav bar -->
-            <div class="w-100  d-flex">
-                <h3 class="mt-4">Gerenciamento <br>
+
+<aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+    <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+    </a>
+    <nav class="vertnav navbar navbar-light">
+        <!-- nav bar -->
+        <div class="w-100  d-flex">
+            <h3 class="mt-4">Gerenciamento <br>
                 de Contactos
-                </h3>
-            </div>
+            </h3>
+        </div>
+
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <p class="text-muted nav-heading mt-4 mb-1">
+                <span>Painel</span>
+            </p>
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="fe fe-home fe-16"></i>
+                        <span class="ml-3 item-text">Painel</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="{{ route('people.index') }}">
+                        <i class="fe fe-users fe-16"></i>
+                        <span class="ml-3 item-text">Pessoas</span>
+                    </a>
+                </li>
+            </ul>
 
             <ul class="navbar-nav flex-fill w-100 mb-2">
-                <p class="text-muted nav-heading mt-4 mb-1">
-                    <span>Painel</span>
-                </p>
-                <ul class="navbar-nav flex-fill w-100 mb-2">
-                    <li class="nav-item w-100">
-                        <a class="nav-link" href="{{ route('home') }}">
-                            <i class="fe fe-home fe-16"></i>
-                            <span class="ml-3 item-text">Painel</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav flex-fill w-100 mb-2">
-                    <li class="nav-item w-100">
-                        <a class="nav-link" href="{{ route('people.index') }}">
-                            <i class="fe fe-users fe-16"></i>
-                            <span class="ml-3 item-text">Pessoas</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav flex-fill w-100 mb-2">
-                    <li class="nav-item w-100">
-                        <a class="nav-link" href="{{ route('country.index') }}">
-                            <i class="fe fe-globe fe-16"></i>
-                            <span class="ml-3 item-text">   Contactos p/ País</span>
-                        </a>
-                    </li>
-                </ul>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">
+                        <i class="fe fe-globe fe-16"></i>
+                        <span class="ml-3 item-text"> Contactos p/ País</span>
+                    </a>
+                </li>
+            </ul>
 
 
 
-
+            @if (null !== Auth::user())
                 {{-- Menu de Utilizadores --}}
                 <p class="text-muted nav-heading mt-2 mb-1">
                     <span> Utilizadores</span>
@@ -108,12 +106,9 @@
                         </li>
                     </ul>
                 </li>
+            @endif
 
+        </ul>
 
-
-
-            </ul>
-
-        </nav>
-    </aside>
-@endif
+    </nav>
+</aside>

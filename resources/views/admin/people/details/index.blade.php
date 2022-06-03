@@ -90,9 +90,12 @@
                         Contactos
                     </h2>
                 </div>
-                <div class="col-md-6 text-end text-right">
-                    <a href="{{ route('contact.create', $people->id) }}" class="btn btn-primary">Adicionar Contacto</a>
-                </div>
+                @if (null !== Auth::user())
+                    <div class="col-md-6 text-end text-right">
+                        <a href="{{ route('contact.create', $people->id) }}" class="btn btn-primary">Adicionar
+                            Contacto</a>
+                    </div>
+                @endif
             </div>
 
             <table class="table datatables table-hover table-bordered" id="dataTable-1">
