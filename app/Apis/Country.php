@@ -2,16 +2,22 @@
 
 namespace App\Apis;
 
+use Illuminate\Support\Facades\Http;
 
 class Country
 {
 
     public function get()
     {
-        $curl = curl_init();
+        $response = Http::get('http://api.countrylayer.com/v2/all', [
+            'access_key' => '02f23441a58e91e4cd70aa27b3b0d49c',
+            'limit' => 10,
+        ]);
+        return json_decode($response->body());
+        /* curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'http://api.countrylayer.com/v2/all?access_key=0985d4d199e57722f6cc39e2bafe6892',
+          CURLOPT_URL => 'http://api.countrylayer.com/v2/all?access_key=02f23441a58e91e4cd70aa27b3b0d49c',
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -24,7 +30,7 @@ class Country
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response;
+        return ($response); */
 
 
 
