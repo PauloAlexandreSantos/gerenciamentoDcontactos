@@ -4,10 +4,17 @@
 @section('content')
     <div class="card mb-2">
         <div class="card-body">
-            <h2 class="h5 page-title">
-                Lista de Pessoas
-            </h2>
-            <a href="{{ route('people.create') }}">Cadastrar Pessoa</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="h5 page-title">
+                        Lista de Pessoas
+                    </h2>
+                </div>
+                <div class="col-md-6 text-end text-right">
+                     <a href="{{ route('people.create') }}" class="btn btn-primary">Cadastrar Pessoa</a>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="card shadow mb-4">
@@ -29,7 +36,7 @@
 
                             <td>{{ $item->name }} </td>
                             <td>{{ $item->email }} </td>
-                            <td>{!! html_entity_decode($item->avatar) !!}</td>
+                            <td width="2px">{!! html_entity_decode($item->avatar) !!}</td>
 
                             <td>
                                 <div class="dropdown">

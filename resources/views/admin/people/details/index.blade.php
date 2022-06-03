@@ -22,7 +22,7 @@
 
                                     <div class="col-md-12 mb-2">
                                         <h5 class="mb-1">
-                                            <b>Email:</b><br>
+                                            <b>Email: </b>
                                             {{ $people->email }}
                                         </h5>
                                     </div>
@@ -30,7 +30,11 @@
                                         <h5 class="mb-1">
                                             <b>Avatar:</b>
                                         </h5>
-                                        {!! html_entity_decode($people->avatar) !!}
+
+                                        <div class="col-md-2">
+                                            {!! html_entity_decode($people->avatar) !!}
+
+                                        </div>
 
                                     </div>
 
@@ -49,11 +53,13 @@
 
                                     </div>
                                     @if (null !== Auth::user())
-                                        <div class="col-md-5 mb-2">
-                                            <a href='{{ route('people.edit', $people->id) }}'
-                                                class="dropdown-item">Editar</a>
+                                        <div class="col-md-5 mb-2 text-end text-right">
 
-                                            <a href='{{ route('people.delete', $people->id) }}' class="dropdown-item">
+                                            <a href='{{ route('people.edit', $people->id) }}'
+                                                class="btn btn-primary px-5">Editar</a>
+
+                                            <a href='{{ route('people.delete', $people->id) }}'
+                                                class="btn btn-danger px-5">
                                                 Eliminar
                                             </a>
 
@@ -74,13 +80,21 @@
     </div>
 
 
-    <a href="{{ route('contact.create', $people->id) }}">Adicionar Contacto</a>
-
-
-
 
     <div class="card shadow mb-4">
+
         <div class="card-body">
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <h2 class="h5 page-title">
+                        Contactos
+                    </h2>
+                </div>
+                <div class="col-md-6 text-end text-right">
+                    <a href="{{ route('contact.create', $people->id) }}" class="btn btn-primary">Adicionar Contacto</a>
+                </div>
+            </div>
+
             <table class="table datatables table-hover table-bordered" id="dataTable-1">
                 <thead class="bg-primary">
                     <tr class="text-center">
@@ -105,13 +119,13 @@
                                         <i class="fa fa-clone fa-sm" aria-hidden="true"></i>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a href='{{ route('contact.show', $item->id) }}'
-                                            class="dropdown-item">Detalhes</a>
+
                                         @if (null !== Auth::user())
                                             <a href='{{ route('contact.edit', $item->id) }}'
                                                 class="dropdown-item">Editar</a>
 
-                                            <a href='{{ route('contact.delete', $item->id) }}' class="dropdown-item">
+                                            <a href='{{ route('contact.delete', $item->id) }}'
+                                                class="dropdown-item bg-danger text-white">
                                                 Eliminar
                                             </a>
                                         @endif
