@@ -47,10 +47,9 @@
         <nav class="vertnav navbar navbar-light">
             <!-- nav bar -->
             <div class="w-100  d-flex">
-                <a class="navbar-brand mx-auto  flex-fill text-center" href="{{ route('home') }}">
-                    <img rel="icon" src="/images/logotipo/logo.png" style="width:120px; margin:auto" />
-
-                </a>
+                <h3 class="mt-4">Gerenciamento <br>
+                de Contactos
+                </h3>
             </div>
 
             <ul class="navbar-nav flex-fill w-100 mb-2">
