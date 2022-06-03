@@ -70,3 +70,18 @@
 
 
 @endsection
+
+@section('JS')
+<script>
+    $('#dataTable-1').DataTable({
+        autoWidth: true,
+        "lengthMenu": [
+            [8, 16, 32, -1],
+            [8, 16, 32, "All"]
+        ],
+        "order": [
+            [0, 'asc']
+        ]
+    });
+</script>
+@endsection
